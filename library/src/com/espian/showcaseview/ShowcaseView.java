@@ -1,5 +1,6 @@
 package com.espian.showcaseview;
 
+import android.animation.Animator;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -26,6 +27,8 @@ import android.widget.RelativeLayout;
 import com.espian.showcaseview.actionbar.ActionBarViewWrapper;
 import com.espian.showcaseview.actionbar.reflection.BaseReflector;
 import com.espian.showcaseview.anim.AnimationUtils;
+import com.espian.showcaseview.anim.AnimationUtils.AnimationEndListener;
+import com.espian.showcaseview.anim.AnimationUtils.AnimationStartListener;
 import com.espian.showcaseview.drawing.ClingDrawer;
 import com.espian.showcaseview.drawing.ClingDrawerImpl;
 import com.espian.showcaseview.drawing.TextDrawer;
@@ -34,10 +37,6 @@ import com.espian.showcaseview.targets.Target;
 import com.espian.showcaseview.utils.Calculator;
 import com.espian.showcaseview.utils.PointAnimator;
 import com.github.espiandev.showcaseview.R;
-import com.nineoldandroids.animation.Animator;
-
-import static com.espian.showcaseview.anim.AnimationUtils.AnimationEndListener;
-import static com.espian.showcaseview.anim.AnimationUtils.AnimationStartListener;
 
 /**
  * A view which allows you to showcase areas of your app with an explanation.

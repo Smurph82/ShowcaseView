@@ -13,6 +13,16 @@ public class ShowcaseViews {
 
     private final List<ShowcaseView> views = new ArrayList<ShowcaseView>();
     private final Activity activity;
+    /** To tell when the a Showcaseview is showing on the screen */
+    private Boolean mIsShowing = false;
+    
+    /**
+     * @return <code>true</code> if the ShowcaseView is visible, <code>false</code> if the ShowcaseView is not visible
+     */
+    public boolean isShowing()  {
+    	return mIsShowing;
+    }
+    
     private OnShowcaseAcknowledged showcaseAcknowledgedListener = new OnShowcaseAcknowledged() {
         @Override
         public void onShowCaseAcknowledged(ShowcaseView showcaseView) {
@@ -81,6 +91,7 @@ public class ShowcaseViews {
 
     private void showNextView(ShowcaseView showcaseView) {
         if (views.isEmpty()) {
+            mIsShowing = false;
             showcaseAcknowledgedListener.onShowCaseAcknowledged(showcaseView);
         } else {
             show();
@@ -107,6 +118,7 @@ public class ShowcaseViews {
         view.setVisibility(View.INVISIBLE);
         ((ViewGroup) activity.getWindow().getDecorView()).addView(view);
         view.show();
+        mIsShowing = true;
         views.remove(0);
 
     }

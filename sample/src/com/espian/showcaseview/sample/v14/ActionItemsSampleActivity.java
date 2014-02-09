@@ -1,16 +1,16 @@
 package com.espian.showcaseview.sample.v14;
 
+import android.app.Activity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
-import com.actionbarsherlock.app.SherlockActivity;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuItem;
 import com.espian.showcaseview.ShowcaseView;
 import com.espian.showcaseview.sample.R;
 import com.espian.showcaseview.targets.ActionItemTarget;
 import com.espian.showcaseview.targets.ActionViewTarget;
 
-public class ActionItemsSampleActivity extends SherlockActivity {
+public class ActionItemsSampleActivity extends Activity {
 
     ShowcaseView sv;
     ShowcaseView.ConfigOptions mOptions = new ShowcaseView.ConfigOptions();
@@ -19,13 +19,13 @@ public class ActionItemsSampleActivity extends SherlockActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sample);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
         mOptions.block = false;
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getSupportMenuInflater().inflate(R.menu.menu, menu);
+        getMenuInflater().inflate(R.menu.menu, menu);
 
         ActionViewTarget target = new ActionViewTarget(this, ActionViewTarget.Type.OVERFLOW);
         sv = ShowcaseView.insertShowcaseView(target, this,

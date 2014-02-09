@@ -1,14 +1,14 @@
 package com.espian.showcaseview.sample.fragments;
 
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.view.MenuItem;
 
 import com.espian.showcaseview.sample.R;
 
-public class ShowcaseFragmentActivity extends FragmentActivity {
+public class ShowcaseFragmentActivity extends Activity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

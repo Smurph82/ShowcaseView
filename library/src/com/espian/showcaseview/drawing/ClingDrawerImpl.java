@@ -10,6 +10,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
 
+import com.espian.showcaseview.utils.Constants;
 import com.github.espiandev.showcaseview.R;
 
 /**
@@ -20,6 +21,7 @@ public class ClingDrawerImpl implements ClingDrawer {
     private Paint mEraser;
     private Drawable mShowcaseDrawable;
     private Rect mShowcaseRect;
+    private final Boolean D = Constants.DEBUG;
 
     public ClingDrawerImpl(Resources resources, int showcaseColor) {
         PorterDuffXfermode mBlender = new PorterDuffXfermode(PorterDuff.Mode.CLEAR);
@@ -77,7 +79,7 @@ public class ClingDrawerImpl implements ClingDrawer {
             return false;
         }
 
-        Log.d("ShowcaseView", "Recalculated");
+        if (D) Log.d("ShowcaseView", "Recalculated");
 
         mShowcaseRect.left = cx - dw / 2;
         mShowcaseRect.top = cy - dh / 2;
